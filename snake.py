@@ -68,7 +68,7 @@ score = 0
 game_over = False
 while not game_over:
     #speed snake
-    clock.tick(10)
+    clock.tick(9)
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
