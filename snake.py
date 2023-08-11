@@ -4,20 +4,20 @@ from pygame.locals import *
 
 #same pixel both snake and apple
 def on_grid_random():
-    x = random.randint(0,300)
-    y = random.randint(0,300)
+    x = random.randint(0,500)
+    y = random.randint(0,500)
     return (x//10 * 10, y//10 * 10)
 
 def game_over_screen():
     game_over_font = pygame.font.Font('freesansbold.ttf', 75)
     game_over_screen = game_over_font.render('SE FODEU', True, (225, 225, 225))
     game_over_rect = game_over_screen.get_rect()
-    game_over_rect.midtop = (300/2, 10)
+    game_over_rect.midtop = (500/2, 10)
 
     play_again_font = pygame.font.Font('freesansbold.ttf', 32)
     play_again_screen = play_again_font.render('Jogar novamente', True, (225, 225, 225))
     play_again_rect = play_again_screen.get_rect()
-    play_again_rect.midtop = (300/2, 300)
+    play_again_rect.midtop = (500/2, 300)
 
     screen.blit(game_over_screen, game_over_rect)
     screen.blit(play_again_screen, play_again_rect)
@@ -44,7 +44,7 @@ DOWN = 2
 LEFT = 3
 
 pygame.init()
-screen = pygame.display.set_mode((300,300))
+screen = pygame.display.set_mode((500,500))
 pygame.display.set_caption('Snake')
 
 #snake
@@ -68,14 +68,14 @@ score = 0
 game_over = False
 while not game_over:
     #speed snake
-    clock.tick(9)
+    clock.tick(10)
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
             exit()
             
         if event.type == KEYDOWN:
-            if event.key == K_UP and my_direction != w:
+            if event.key == K_UP and my_direction != DOWN:
                 my_direction = UP
             if event.key == K_DOWN and my_direction != UP:
                 my_direction = DOWN
