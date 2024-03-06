@@ -75,13 +75,13 @@ while not game_over:
             exit()
             
         if event.type == KEYDOWN:
-            if event.key == K_UP and my_direction != DOWN:
+            if event.key == K_w and my_direction != DOWN:
                 my_direction = UP
-            if event.key == K_DOWN and my_direction != UP:
+            if event.key == K_s and my_direction != UP:
                 my_direction = DOWN
-            if event.key == K_LEFT and my_direction != RIGHT:
+            if event.key == K_a and my_direction != RIGHT:
                 my_direction = LEFT
-            if event.key == K_RIGHT and my_direction != LEFT:
+            if event.key == K_d and my_direction != LEFT:
                 my_direction = RIGHT
 
     if collision(snake[0], apple_pos):
